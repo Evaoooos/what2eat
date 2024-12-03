@@ -1,0 +1,664 @@
+/* 筛选区域基础样式 */
+.filters-section {
+    margin: 0.8rem 0 1.5rem;  
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;  /* 减少间距 */
+    align-items: center;
+}
+
+.filter-group {
+    display: flex;
+    gap: 0.6rem;  /* 减少间距 */
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* 统一的基础样式 */
+.radio-button,
+.filter-select,
+.tag-button {
+    padding: 0.6rem 1.2rem;
+    background: #fff;
+    border: 2px solid var(--secondary-color);
+    border-radius: 25px;
+    font-size: 0.95rem;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 38px;  
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* 中西餐选择按钮 */
+.cuisine-group .radio-button {
+    border-color: var(--primary-color);
+    font-weight: 500;
+}
+
+.cuisine-group .radio-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(255, 153, 153, 0.2);
+}
+
+.cuisine-group .radio-button input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.cuisine-group .radio-button input[type="radio"]:checked ~ span {
+    color: var(--primary-color);
+}
+
+/* 下拉选择框 */
+.filter-select {
+    padding-right: 2.5rem;
+    min-width: 160px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+}
+
+.filter-select:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(255, 153, 153, 0.2);
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 153, 153, 0.1);
+}
+
+/* 可选标签按钮 */
+.tag-group .tag-button {
+    font-size: 0.9rem;
+    border-style: dashed;
+}
+
+.tag-group .tag-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(255, 153, 153, 0.2);
+}
+
+.tag-group .tag-button input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.tag-group .tag-button input[type="checkbox"]:checked ~ span {
+    color: var(--primary-color);
+}
+
+.tag-group .tag-button input[type="checkbox"]:checked {
+    border-style: solid;
+}
+
+.tag-button {
+    position: relative;
+}
+
+.tag-button input[type="checkbox"]:checked + .tag-button {
+    border-style: solid;
+    border-color: var(--primary-color);
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 768px) {
+    .filters-section {
+        gap: 1rem;
+    }
+    
+    .filter-group {
+        gap: 0.6rem;
+    }
+
+    .radio-button,
+    .filter-select,
+    .tag-button {
+        height: 36px;  
+        font-size: 0.9rem;
+    }
+
+    .filter-select {
+        min-width: 140px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .filters-section {
+        gap: 0.8rem;
+    }
+
+    .filter-group {
+        gap: 0.4rem;
+    }
+
+    .radio-button,
+    .filter-select,
+    .tag-button {
+        height: 34px;  
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .filter-select {
+        min-width: 120px;
+    }
+}
+
+/* 选项组标题 */
+.filter-group::before {
+    content: attr(data-title);
+    position: absolute;
+    top: -1.5rem;
+    left: 0;
+    font-size: 0.85rem;
+    color: #888;
+    width: 100%;
+    text-align: center;
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    textarea {
+        height: 80px;
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .result {
+        padding: 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    footer {
+        padding: 1.5rem 1rem;
+        gap: 1rem;
+    }
+
+    .creator-message {
+        font-size: 0.85rem;
+        gap: 0.3rem 0.8rem;
+        padding: 0 0.5rem;
+    }
+
+    .payment-section {
+        max-width: 140px;
+    }
+
+    .payment-section p {
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .creator-message {
+        font-size: 0.8rem;
+        gap: 0.25rem 0.6rem;
+        padding: 0;
+    }
+
+    .payment-section {
+        max-width: 120px;
+    }
+
+    .copyright {
+        font-size: 0.8rem;
+    }
+
+    footer {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .filter-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-select, .checkbox-label {
+        width: 100%;
+        text-align: center;
+    }
+
+    .recipe-nutrition li {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer-content {
+        gap: 1.5rem;
+    }
+
+    .creator-message {
+        font-size: 0.85rem;
+    }
+
+    .payment-section img {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .creator-message {
+        font-size: 0.8rem;
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    .payment-section img {
+        width: 90px;
+    }
+
+    .copyright {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .filters-section {
+        gap: 0.8rem;
+    }
+
+    .filter-group {
+        gap: 0.6rem;
+    }
+
+    .radio-button,
+    .filter-select,
+    .tag-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .filter-select {
+        min-width: 140px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .filters-section {
+        gap: 0.6rem;
+    }
+
+    .filter-group {
+        gap: 0.4rem;
+    }
+
+    .radio-button,
+    .filter-select,
+    .tag-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .filter-select {
+        min-width: 120px;
+    }
+}
+
+:root {
+    --primary-color: #FF9999;
+    --secondary-color: #FFB6C1;
+    --background-color: #FFF0F5;
+    --text-color: #4A4A4A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1::before {
+    content: "🍳";
+    margin-right: 10px;
+}
+
+header h1::after {
+    content: "🥘";
+    margin-left: 10px;
+}
+
+header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.input-section {
+    margin-bottom: 2rem;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 1rem;
+    border: 3px solid var(--secondary-color);
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-family: 'Microsoft YaHei', sans-serif;
+    resize: vertical;
+    margin-bottom: 1rem;
+    transition: all 0.3s;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 15px rgba(255, 153, 153, 0.3);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(255, 153, 153, 0.3);
+}
+
+button:hover {
+    background-color: #FF7777;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 153, 153, 0.4);
+}
+
+button:disabled {
+    background-color: #FFB6C1;
+    cursor: not-allowed;
+}
+
+.cuisine-selection {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.cuisine-selection label {
+    display: inline-block;
+    margin: 0 1rem;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cuisine-selection label:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.cuisine-selection input[type="radio"] {
+    display: none;
+}
+
+.cuisine-selection input[type="radio"]:checked + span {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.cuisine-selection label:has(input[type="radio"]:checked) {
+    background-color: var(--secondary-color);
+    color: white;
+    border-color: var(--secondary-color);
+}
+
+.preferences {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.checkbox-label:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.nutrition-info {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    border: 2px solid var(--secondary-color);
+    display: none;
+}
+
+.nutrition-info.show {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.recipe-nutrition {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    border: 1px solid var(--secondary-color);
+}
+
+.recipe-nutrition h4 {
+    color: var(--primary-color);
+    margin: 0 0 0.8rem 0;
+    font-size: 1.1rem;
+}
+
+.recipe-nutrition ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recipe-nutrition li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.recipe-nutrition li:last-child {
+    border-bottom: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result {
+    display: none;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    white-space: pre-wrap;
+    border: 3px solid var(--secondary-color);
+}
+
+.result.show {
+    display: block;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #FFE4E1;
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+footer {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.creator-message {
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #666;
+    max-width: 600px;
+}
+
+.creator-message p {
+    margin: 0.5rem 0;
+}
+
+.payment-section {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.payment-section p {
+    margin: 0 0 0.5rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.payment-section img {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.payment-section img:hover {
+    transform: scale(1.02);
+}
+
+.copyright {
+    margin: 1rem 0 0 0;
+    color: #888;
+    font-size: 0.85rem;
+}

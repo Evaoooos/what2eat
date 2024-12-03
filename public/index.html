@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今天吃什么</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>今天吃什么</h1>
+            <p>输入家里食材，AI帮你想菜谱！🥘</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <textarea 
+                    id="ingredients" 
+                    placeholder="请输入你家里有的食材，用逗号分隔（例如：鸡蛋,西红柿,青椒）✨"
+                ></textarea>
+                
+                <section class="filters-section">
+                    <div class="filter-group cuisine-group">
+                        <label class="radio-button">
+                            <input type="radio" name="cuisine" value="chinese" checked>
+                            <span>🥘 中餐</span>
+                        </label>
+                        <label class="radio-button">
+                            <input type="radio" name="cuisine" value="western">
+                            <span>🍝 西餐</span>
+                        </label>
+                    </div>
+
+                    <div class="filter-group">
+                        <select id="cookingTime" class="filter-select">
+                            <option value="any">⏰ 烹饪时间不限</option>
+                            <option value="15">⚡️ 15分钟快手菜</option>
+                            <option value="30">🕐 30分钟以内</option>
+                        </select>
+
+                        <select id="taste" class="filter-select">
+                            <option value="normal">🏠 家常口味</option>
+                            <option value="light">🥬 清淡饮食</option>
+                            <option value="healthy">🥗 低油少盐</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group tag-group">
+                        <label class="tag-button">
+                            <input type="checkbox" id="isLunchbox">
+                            <span>🍱 适合带饭</span>
+                        </label>
+                        <label class="tag-button">
+                            <input type="checkbox" id="isOnePot">
+                            <span>🥘 一锅完成</span>
+                        </label>
+                        <label class="tag-button">
+                            <input type="checkbox" id="isSimpleTools">
+                            <span>🔪 简单厨具</span>
+                        </label>
+                    </div>
+                </section>
+
+                <button id="generate" onclick="generateRecipes()">✨ 生成美味菜谱 ✨</button>
+            </div>
+
+            <div class="output-section">
+                <div id="loading" class="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>🧑‍🍳 大厨正在精心设计菜谱...</p>
+                </div>
+                <div id="result" class="result"></div>
+                <div id="nutrition-info" class="nutrition-info"></div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="creator-message">
+                    <p>👋哈喽！我是你的专属美食小帮手~ </p>
+                    <p>希望能陪你一起探索美味新世界，让每次下厨都充满期待和快乐！</p>
+                    <p>如果觉得我对你有帮助，请我喝杯咖啡就是对我最好的鼓励啦☕️ </p>
+                    <p>有任何想法或建议都欢迎通过邮件联系我，让我变得更懂你！</p>
+                    <p>愿美食带给你生活中的每一分温暖与感动~</p>
+                    <p>📧 ruanyiyi@gmail.com</p>
+                    
+                </div>
+                <div class="payment-section">
+                    <p>感谢支持~</p>
+                    <img src="1.jpg" alt="微信赞赏码" title="微信赞赏">
+                </div>
+            </div>
+            <p class="copyright">AI智能菜谱推荐 | 让烹饪充满乐趣 🥗</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
