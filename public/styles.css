@@ -280,7 +280,7 @@
     }
 
     .payment-section img {
-        width: 100px;
+        width: 80px;
     }
 }
 
@@ -298,7 +298,7 @@
     }
 
     .payment-section img {
-        width: 90px;
+        width: 70px;
     }
 
     .copyright {
@@ -646,7 +646,7 @@ footer {
 }
 
 .payment-section img {
-    width: 120px;
+    width: 100px;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);

@@ -177,6 +177,7 @@ sudo systemctl status nginx
 
 ## 联系方式
 
-📧 Email: ruanyiyi@gmail.comka  
+📧 Email: ruanyiyi@gmail.com  
 有帮助的话能请我喝杯咖啡嘛~☕️ 
-![微信收款码](./public/1.jpg)
+
+<img src="public/1.jpg" width="150" alt="微信收款码">
