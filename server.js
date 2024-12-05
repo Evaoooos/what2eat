@@ -4,7 +4,8 @@ const path = require('path');
 const OpenAI = require('openai');
 
 const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY
+    apiKey: process.env.OPENAI_API_KEY,
+    baseURL: process.env.OPENAI_BASE_URL
 });
 
 const app = express();
@@ -29,8 +30,8 @@ app.post('/api/generate', async (req, res) => {
         if (preferences.cookingTime !== 'any') {
             preferencesText.push(`烹饪时间在${preferences.cookingTime}分钟以内`);
         }
-        if (preferences.taste === 'light') {
-            preferencesText.push('清淡口味');
+        if (preferences.taste === 'spicy') {
+            preferencesText.push('川香麻辣');
         } else if (preferences.taste === 'healthy') {
             preferencesText.push('低油少盐');
         }
