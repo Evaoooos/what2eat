@@ -179,4 +179,4 @@ sudo systemctl status nginx
 📧 Email: ruanyiyi@gmail.com  
 有帮助的话能请我喝杯咖啡嘛~☕️ 
 
-<img src="public/1.jpg" width="200" alt="微信收款码">
+<img src="public/1.jpg" width="300" alt="微信收款码">
